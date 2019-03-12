@@ -19,9 +19,10 @@ from imgaug import augmenters as iaa
 from mrcnn.config import Config
 from mrcnn import model as modellib
 from mrcnn import visualize
-from mrcnn.utilstwo import utilstwo
+from mrcnn import utils
 from imutils import paths
 import numpy as np
+import imutils
 import random
 import cv2
 import os
@@ -109,7 +110,7 @@ class LesionBoundaryInferenceConfig(LesionBoundaryConfig):
 # In[20]:
 
 
-class LesionBoundaryDataset(utilstwo.Dataset):
+class LesionBoundaryDataset(utils.Dataset):
     def __init__(self, imagePaths, classNames, width=1024):
         # call the parent constructor
         super().__init__(self)
